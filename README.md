@@ -18,7 +18,7 @@ Template base para React Web App
 <br>
 
 <p align="center">
-  <img alt="rocketpay" src=".github/project.png" width="100%">
+  <img alt="rocketpay" src=".github/project.jpeg" width="100%">
 </p>
 
 ## 🚀 Tecnologias
@@ -40,13 +40,13 @@ seguintes bibliotecas pré configuradas
 
 - Aliases: categorizar apontamentos de importação para o ./src
 - ESlint/Prettier para regras e padronização de escrita de código JSX/TS
-  1. Auto Import: corrgir automaticamente as importações
-  2. Organize Import: categorizar e organizar importação
-  3. Consistent Type Import: explicitar o type/interface na importação
-  4. Explicit Function Return Type: definir tipo de retorno de função
-  5. Exhaustive Hooks Deps: identificar itens para o array de dependencias em
-     Hooks
-  6. Resolve Aliases: resolvedores de importação com uso de aliases
+  - Auto Import: corrgir automaticamente as importações
+  - Organize Import: categorizar e organizar importação
+  - Consistent Type Import: explicitar o type/interface na importação
+  - Explicit Function Return Type: definir tipo de retorno de função
+  - Exhaustive Hooks Deps: identificar itens para o array de dependencias em
+    Hooks
+  - Resolve Aliases: resolvedores de importação com uso de aliases
 - Styled-Components: definir a criação de componentes estilizados
 - Vitest: realizar testes com o auxilio e integração de Testing Library e Jest
 
