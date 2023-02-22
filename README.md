@@ -49,6 +49,7 @@ seguintes bibliotecas pré configuradas
   - Resolve Aliases: resolvedores de importação com uso de aliases
 - Styled-Components: definir a criação de componentes estilizados
 - Vitest: realizar testes com o auxilio e integração de Testing Library e Jest
+  Styled Components
 
 ## :memo: Licença
 
