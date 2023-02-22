@@ -1,4 +1,9 @@
-import styled from 'styled-components';
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+import styled, { css } from 'styled-components';
+
+const TextGradientBase = css`
+	color: ${({ theme }) => theme.green};
+`;
 
 export const AppContainer = styled.main`
 	display: flex;
@@ -14,10 +19,15 @@ export const AppContainer = styled.main`
 
 	text-align: center;
 
+	h1,
 	a {
-		color: cornflowerblue;
+		${TextGradientBase}
+	}
+
+	a {
 		text-decoration: none;
 		font-size: 1.2rem;
+		border-bottom: 1px solid ${({ theme }) => theme.green};
 	}
 `;
 
@@ -25,10 +35,4 @@ export const AvatarContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
-`;
-
-export const Avatar = styled.img`
-	max-width: 9.375rem;
-	max-width: 9.375rem;
-	border-radius: 9999px;
 `;
