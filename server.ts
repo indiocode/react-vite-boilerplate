@@ -1,11 +1,14 @@
-/* eslint-disable @typescript-eslint/explicit-function-return-type */
-/* eslint-disable no-undef */
-const bodyParser = require('body-parser');
-const { randomUUID } = require('crypto');
-const fs = require('fs');
-const jsonServer = require('json-server');
-const auth = require('json-server-auth');
-const jwt = require('jsonwebtoken');
+import bodyParser from 'body-parser';
+import { randomUUID } from 'crypto';
+import fs from 'fs';
+import jsonServer from 'json-server';
+import auth from 'json-server-auth';
+import jwt from 'jsonwebtoken';
+
+interface Auth {
+	email: string;
+	password: string;
+}
 
 const server = jsonServer.create();
 const middlewares = jsonServer.defaults();
@@ -16,7 +19,7 @@ server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(middlewares);
 
-const addUuid = (req, res, next) => {
+const addUuid = (req, res, next): void => {
 	if (req.method === 'POST') {
 		req.body.id = randomUUID();
 	}
@@ -27,18 +30,18 @@ server.use(addUuid);
 
 const rules = auth.rewriter({
 	users: 600,
-	'600/privates': '/privates', //use a private route to authenticaded users
+	privates: 600, //use a private route to authenticaded users
 });
 
 const SECRET_KEY = 'DEVELOP_SERVER:1.0.0';
 
 const expiresIn = '1h';
 
-function createToken(payload) {
+function createToken(payload: Auth): string {
 	return jwt.sign(payload, SECRET_KEY, { expiresIn });
 }
 
-function isAuthenticated({ email, password }) {
+function isAuthenticated({ email, password }): boolean {
 	return (
 		database.users.findIndex(
 			(user) => user.email === email && user.password === password,
